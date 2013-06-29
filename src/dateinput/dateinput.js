@@ -471,8 +471,9 @@
 				var pos = input.offset();
 
 				// iPad position fix
-				if (/iPad/i.test(navigator.userAgent)) {
+				if (/iPhone|iPad|iPod/.test(navigator.platform) && /; CPU.*OS (?:3_2|4_0)/i.test(navigator.userAgent)) {
 					pos.top -= $(window).scrollTop();
+					pos.left -= $(window).scrollLeft();
 				}
 				
 				root.css({ 
